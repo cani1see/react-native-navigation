@@ -65,12 +65,16 @@ export default class Options extends React.Component<Props> {
           testID={GOTO_BUTTONS_SCREEN}
           onPress={this.pushButtonsScreen}
         />
-        <Button label="StatusBar" onPress={this.statusBarScreen} />
         <Button
           label="Toggle Navigation bar visibility"
           platform="android"
           onPress={this.toggleAndroidNavigationBar}
         />
+        <Button
+          label="Set statusBar.drawBehind in DefaultOptions"
+          onPress={this.drawBehindInDefaultOptions}
+        />
+        <Button label="StatusBar" onPress={this.statusBarScreen} />
       </Root>
     );
   }
@@ -124,6 +128,14 @@ export default class Options extends React.Component<Props> {
         title: {
           text: 'Default Title',
         },
+      },
+    });
+  };
+
+  drawBehindInDefaultOptions = () => {
+    Navigation.setDefaultOptions({
+      statusBar: {
+        drawBehind: true,
       },
     });
   };

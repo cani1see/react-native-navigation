@@ -11,7 +11,6 @@ export default class StatusBarOptions extends React.Component<NavigationComponen
     return {
       statusBar: {
         translucent: true,
-        drawBehind: true,
       },
       topBar: {
         elevation: 0,
